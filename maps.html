@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Heritage Route Planner</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    
+        /* Navigation Bar Animation */
+        .navbar {
+            background-color: rgba(25, 9, 9, 0.947); /* Change the background color */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slide-down 0.5s ease-in-out;
+            padding: 5px 0; /* Increase the top and bottom padding */
+        }
+    
+        @keyframes slide-down {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    
+        .navbar ul.navbar-nav {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+    
+        .navbar li.nav-item {
+            margin-right: 20px;
+        }
+    
+        .navbar a.nav-link {
+            text-decoration: none;
+            color: #fff; /* Change the text color */
+            padding: 15px 20px; /* Increase the padding to make it thicker */
+            border-radius: 10px; /* Add rounded corners to the links */
+        }
+    
+        /* Header Section */
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+        }
+    
+        /* Search Form */
+        .search-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .search-form input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .search-form button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    
+        /* Cultural Heritage Sites Section */
+        .cultural-sites {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+    
+        .cultural-site {
+            background-color: #fff;
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fade-in 0.5s ease-in-out;
+        }
+    
+        .cultural-site img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        .cultural-site h3 {
+            padding: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+    
+        .cultural-site p {
+            padding: 10px;
+            color: #777;
+        }
+    
+        /* Route Planning Form */
+        .route-planning-form {
+            text-align: center;
+            margin-top: 50px;
+            display: none;
+            animation: slide-in 0.5s ease-in-out;
+        }
+    
+        /* Additional Animations */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slide-in {
+            from {
+                transform: translateY(100px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Header Section -->
+        <h1>Explore India's Cultural Heritage</h1>
+
+        <!-- Search Form -->
+        <div class="search-form">
+            <form>
+                <input type="text" id="destination" name="destination" placeholder="Enter your destination">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Cultural Heritage Sites Section -->
+        <div class="cultural-sites">
+            <div class="cultural-site">
+                <img src="image1.jpg" alt="Image 1">
+                <h3>Site Name 1</h3>
+                <p>Description of Site 1</p>
+                <p> Yaar yeh itna tough kyu hai </p>
+            </div>
+            <div class="cultural-site">
+                <img src="image2.jpg" alt="Image 2">
+                <h3>Site Name 2</h3>
+                <p>Description of Site 2</p>
+                <p> Mujhe sona hai </p>
+                <p> Kal 11:30 baje mentee session hai </p>
+            </div>
+            <div class="cultural-site">
+                <img src="image3.jpg" alt="Image 3">
+                <h3>Site Name 3</h3>
+                <p>Description of Site 3</p>
+                <p> Kya karenge tab 😭 </p>
+            </div>
+        </div>
+
+        <!-- Route Planning Form -->
+        <div class="route-planning-form">
+            <h2>Plan Your Route</h2>
+            <form>
+                <label for="starting_point">Starting Point:</label>
+                <input type="text" id="starting_point" name="starting_point" placeholder="Enter starting point">
+
+                <label for="ending_point">Ending Point:</label>
+                <input type="text" id="ending_point" name="ending_point" placeholder="Enter ending point">
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+
+                <button type="submit">Get Directions</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for displaying the route planning form
+        var planYourRouteButton = document.querySelector("#destination");
+        var routePlanningForm = document.querySelector(".route-planning-form");
+
+        planYourRouteButton.addEventListener("click", function() {
+            routePlanningForm.style.display = "block";
+        });
+    </script>
+</body>
+</html>
